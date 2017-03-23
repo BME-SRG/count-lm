@@ -7,6 +7,7 @@ then
 fi
 if [ "$2" == "0" ] ;
 then
+	mkdir -p vocab
 	cat $1 | sed -r 's/\s+/\n/g' | sort -u > ./vocab/vocab.tmp
 	ngram-count -vocab ./vocab/vocab.tmp -order 1 -lm $3
 else
